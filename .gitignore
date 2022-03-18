@@ -62,3 +62,4 @@ typings/
 
 # SQLite database file
 *.db
+REST-API/
