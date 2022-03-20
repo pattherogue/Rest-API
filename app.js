@@ -21,7 +21,7 @@ app.use(morgan('dev'));
     await sequelize.authenticate();
     // informing successful connection
     console.log('Connection has been established.');
-  } catch (err) {
+  } catch (error) {
     // informing error
     console.error('Unable to connect to the database.', error);
   }
