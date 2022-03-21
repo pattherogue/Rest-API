@@ -84,4 +84,4 @@ module.exports = (sequelize) =>  {
     }, { sequelize });
     
     return Users;
-}
+};
