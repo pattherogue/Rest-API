@@ -19,5 +19,19 @@ module.exports = (sequelize) =>  {
             }
         },
 
+        lastName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: 'A LAST NAME is required'
+                },
+                notEmpty: {
+                    msg: 'Please provide a LAST NAME'
+                }
+            }
+        },
+
+
     })
 }
