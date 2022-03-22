@@ -82,6 +82,10 @@ module.exports = (sequelize) =>  {
         },
         
     }, { sequelize });
+
+    Users.associate = (models) => {
+        
+    }
     
     return Users;
 };
