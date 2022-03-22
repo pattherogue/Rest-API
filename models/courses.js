@@ -41,7 +41,9 @@ module.exports = (sequelize) => {
     }, { sequelize });
 
     Courses.associate = (models) => {
-        
+        Courses.belongsTo(models.Users, {
+            
+        })
     }
 
 
