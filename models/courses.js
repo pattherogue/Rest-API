@@ -38,4 +38,13 @@ module.exports = (sequelize) => {
         materialsNeeded: {
             type: DataTypes.STRING,
         },
+    }, { sequelize });
+
+    Courses.associate = (models) => {
+        
+    }
+
+
+
+     
 }
