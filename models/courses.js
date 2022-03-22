@@ -39,7 +39,7 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
         },
     }, { sequelize });
-/*
+
     Courses.associate = (models) => {
         Courses.belongsTo(models.Users, {
             foreignKey: {
@@ -47,7 +47,7 @@ module.exports = (sequelize) => {
             },
         });
     };
-*/
+
     return Courses;
 
      
