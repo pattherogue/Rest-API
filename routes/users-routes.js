@@ -1,5 +1,5 @@
 /* GET route */
-/* return propertires and values */
+/* return all  propertires and values */
 /* currently authenticated user */
 /* 200 HTTP status code */
 
