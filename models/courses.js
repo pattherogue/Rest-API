@@ -40,6 +40,7 @@ module.exports = (sequelize) => {
         },
     }, { sequelize });
 
+/* define model association */
     Courses.associate = (models) => {
         Courses.belongsTo(models.Users, {
             foreignKey: {

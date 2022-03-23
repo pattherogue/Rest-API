@@ -83,6 +83,8 @@ module.exports = (sequelize) =>  {
         
     }, { sequelize });
 
+    /* define model association */ 
+
     Users.associate = (models) => {
         Users.hasMany(models.Courses, {
             foreignKey: {
