@@ -16,3 +16,7 @@
 /* /api/courses/:id PUT route */
 /* update corresponding course */
 /* return 204 HTTP status code and no content */
+
+/* /api/courses/:id DELETE route */
+/* delete corresponding course */
+/* return 204 HTTP status code and no content */
