@@ -12,3 +12,7 @@
 /* create new course */
 /* set Location header to URl new course */
 /* return 204 HTTP status code and no content */
+
+/* /api/courses/:id PUT route */
+/* update corresponding course */
+/* return 204 HTTP status code and no content */
