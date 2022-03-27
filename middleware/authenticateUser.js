@@ -28,5 +28,9 @@ exports.authenticateUser = async (req, res, next) => {
         message = `Auth header not found`;
     }
 
+    if (message) {
+        
+    }
+
     next();
 };
