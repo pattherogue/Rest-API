@@ -11,7 +11,13 @@ const { asyncHandler } = require('../middleware/asyncHandler');
 
 // Route that returns the current authenticated user 
 Router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
+    // retrieve  current auth user information
+    const user = req.currentUser;
 
+    res.json({
+        name: user.name,
+        username: user.username
+    });
 }));
 
 /* POST route */
