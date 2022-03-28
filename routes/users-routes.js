@@ -14,7 +14,7 @@ Router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
     // retrieve  current auth user information
     const user = req.currentUser;
 
-    res.json({
+    res.status(200).json({
         name: user.name,
         username: user.username
     });
