@@ -1,5 +1,6 @@
 const express = require('express');
-
+const { User } = require('./models');
+const { authenticateUser } = require('./middleware/auth-user');
 
 /* GET route */
 /* return all  propertires and values */
