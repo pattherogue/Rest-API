@@ -6,14 +6,11 @@ const { asyncHandler } = require('../middleware/asyncHandler');
 
 /* GET route */
 /* return all  propertires and values */
-/* currently authenticated user */
-/* 200 HTTP status code */
-
 // Route that returns the current authenticated user 
 Router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
     // retrieve  current auth user information
     const user = req.currentUser;
-
+    /* 200 HTTP status code */
     res.status(200).json({
         id: user.id,
         firstName: user.firstName,
@@ -23,16 +20,14 @@ Router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
 }));
 
 /* POST route */
-/* create new user */
-/* location header to "/" */
-/* return 201 http status code */
-/* no content */
-
-
 // Route that creates a new user 
 Router.post('/users', asyncHandler(async (req, res) => {
     try {
+        /* create new user */
         await User.create(req.body);
+        /* location header to "/" */
+        /* return 201 http status code */
+         /* no content */
         res.status(201).location('/').end();
     } catch (error) {
         if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError') {
