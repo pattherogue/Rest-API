@@ -10,7 +10,7 @@ const { asyncHandler } = require('../middleware/asyncHandler');
 /* 200 HTTP status code */
 
 // Route that returns the current authenticated user 
-Router.get('/users', asyncHandler(async (req, res) => {
+Router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
 
 }));
 
