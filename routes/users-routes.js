@@ -20,3 +20,8 @@ Router.get('/users', asyncHandler(async (req, res) => {
 /* return 201 http status code */
 /* no content */
 
+
+// Route that creates a new user 
+Router.post('/users', asyncHandler(async (req, res) => {
+
+}));
