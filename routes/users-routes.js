@@ -1,8 +1,8 @@
 const express = require('express');
 const { User } = require('./models');
-const { authenticateUser } = require('./middleware/auth-user');
+const { authenticateUser } = require('../middleware/auth-user.js');
 const router = express.Router();
-const { asyncHandler } = require('../middleware/asyncHandler');
+const { asyncHandler } = require('../middleware/asyncHandler.js');
 
 /* GET route */
 /* return all  propertires and values */
