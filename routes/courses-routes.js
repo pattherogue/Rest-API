@@ -2,9 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
-const { authenticateUser } = require('../middleware/auth-user')
-const { asyncHandler } = require('../middleware/asyncHandler')
-
+const { authenticateUser } = require('../middleware/auth-user');
+const { asyncHandler } = require('../middleware/asyncHandler');
+const { User } = require('../models');
+const { Course } = require('../models');
 /* /api/courses GET route */
 /* retunrn all courses */
 /* User associated with course */
