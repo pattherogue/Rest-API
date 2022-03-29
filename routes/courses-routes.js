@@ -1,6 +1,9 @@
+'use strict';
+
 const express = require('express');
 const router = express.Router();
-
+const { authenticateUser } = require('../middleware/auth-user')
+const { asyncHandler } = require('../middleware/asyncHandler')
 
 /* /api/courses GET route */
 /* retunrn all courses */

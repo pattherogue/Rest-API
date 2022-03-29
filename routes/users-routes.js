@@ -1,8 +1,10 @@
+'use strict';
+
 const express = require('express');
 const { User } = require('./models');
-const { authenticateUser } = require('../middleware/auth-user.js');
+const { authenticateUser } = require('../middleware/auth-user');
 const router = express.Router();
-const { asyncHandler } = require('../middleware/asyncHandler.js');
+const { asyncHandler } = require('../middleware/asyncHandler');
 
 /* GET route */
 /* return all  propertires and values */
