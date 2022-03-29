@@ -13,7 +13,9 @@ const { Course } = require('../models');
 /*  return 200 HTTP status code */
 
 router.get('/courses', asyncHandler (async (req, res) => {
-
+    const course = await Course.findAll({
+        
+    })
 }));
 /* /api/courses/:id GET route */
 /* return corresponding course */
