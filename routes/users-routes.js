@@ -1,7 +1,7 @@
 const express = require('express');
 const { User } = require('./models');
 const { authenticateUser } = require('./middleware/auth-user');
-const { Router } = require('express');
+const router = express.Router();
 const { asyncHandler } = require('../middleware/asyncHandler');
 
 /* GET route */

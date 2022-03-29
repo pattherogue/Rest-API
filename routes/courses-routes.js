@@ -1,3 +1,6 @@
+const express = require('express');
+
+
 /* /api/courses GET route */
 /* retunrn all courses */
 /* User associated with course */
