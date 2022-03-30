@@ -8,17 +8,16 @@ const { User } = require('../models');
 const { Course } = require('../models');
 
 /* /api/courses GET route */
-/* retunrn all courses */
-/* User associated with course */
-/*  return 200 HTTP status code */
-
 router.get('/courses', asyncHandler (async (req, res) => {
     const course = await Course.findAll({
+        /* User associated with course */
         include: [{
             model: User,
         }],
     });
+    /* retunrn all courses */
     if (course) {
+        /*  return 200 HTTP status code */
         res.status(200).json(course);
     } else {
         res.status(404).json({ message: "Unable to find course."})
