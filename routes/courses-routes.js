@@ -18,7 +18,11 @@ router.get('/courses', asyncHandler (async (req, res) => {
             model: User,
         }],
     });
-    
+    if (course) {
+        res.status(200).json(course);
+    } else {
+        res.status(404)
+    }
 }));
 /* /api/courses/:id GET route */
 /* return corresponding course */
