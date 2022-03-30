@@ -21,7 +21,7 @@ router.get('/courses', asyncHandler (async (req, res) => {
     if (course) {
         res.status(200).json(course);
     } else {
-        res.status(404)
+        res.status(404).json({ message: "Unable to find course."})
     }
 }));
 /* /api/courses/:id GET route */
