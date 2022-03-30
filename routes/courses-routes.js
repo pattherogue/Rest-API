@@ -14,8 +14,11 @@ const { Course } = require('../models');
 
 router.get('/courses', asyncHandler (async (req, res) => {
     const course = await Course.findAll({
-        
-    })
+        include: [{
+            model: User,
+        }],
+    });
+    
 }));
 /* /api/courses/:id GET route */
 /* return corresponding course */
