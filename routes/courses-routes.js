@@ -25,16 +25,15 @@ router.get('/courses', asyncHandler (async (req, res) => {
 }));
 
 /* /api/courses/:id GET route */
-/* return corresponding course */
-/* include user associated with course */
-/* return 200 HTTP status code and no content */
-
 router.get('/courses/:id', asyncHandler( async (req, res) => {
+    /* return corresponding course */
     const course = await Course.findbyPk(req.params.id, {
+        /* include user associated with course */
         include: [{
             model: User,
         }],
     });
+    /* return 200 HTTP status code and no content */
     if (course) {
         res.status(200).json(course)
     } else {
