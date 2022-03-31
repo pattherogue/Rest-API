@@ -23,10 +23,15 @@ router.get('/courses', asyncHandler (async (req, res) => {
         res.status(404).json({ message: "Unable to find course."})
     }
 }));
+
 /* /api/courses/:id GET route */
 /* return corresponding course */
 /* include user associated with course */
 /* return 200 HTTP status code and no content */
+
+router.get('/courses/:id', asyncHandler( async (req, res) => {
+
+}));
 
 /* /api/courses POST route */
 /* create new course */
