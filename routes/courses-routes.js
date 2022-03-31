@@ -35,7 +35,10 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
             model: User,
         }],
     });
-    
+    if (course) {
+        
+    }
+
 }));
 
 /* /api/courses POST route */
