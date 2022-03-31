@@ -36,6 +36,8 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
         }],
     });
     if (course) {
+        res.status(200).json(course)
+    } else {
         
     }
 
