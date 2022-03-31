@@ -30,7 +30,12 @@ router.get('/courses', asyncHandler (async (req, res) => {
 /* return 200 HTTP status code and no content */
 
 router.get('/courses/:id', asyncHandler( async (req, res) => {
-
+    const course = await Course.findbyPk(req.params.id, {
+        include: [{
+            model: User,
+        }],
+    });
+    
 }));
 
 /* /api/courses POST route */
