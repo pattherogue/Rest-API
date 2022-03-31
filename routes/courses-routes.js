@@ -38,7 +38,7 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
     if (course) {
         res.status(200).json(course)
     } else {
-        res.status(404).json({})
+        res.status(404).json({ message: "Unable to find course." })
     }
 
 }));
