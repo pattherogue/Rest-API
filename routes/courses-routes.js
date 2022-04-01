@@ -48,7 +48,9 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
 /* return 204 HTTP status code and no content */
 
 router.post('/courses', authenticateUser, asyncHandler(async (req, res) => {
-
+     try {
+         const course = await Course.create(req.body);
+     }
 }));
 
 /* /api/courses/:id PUT route */
