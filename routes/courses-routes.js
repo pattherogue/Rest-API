@@ -52,7 +52,9 @@ router.post('/courses', authenticateUser, asyncHandler(async (req, res) => {
          const course = await Course.create(req.body);
          res.status(201).location(`/courses/api/${course.id}`).end();
      } catch (error) {
-         
+         if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeContraintError') {
+             
+         }     
      }
 }));
 
