@@ -53,7 +53,10 @@ router.post('/courses', authenticateUser, asyncHandler(async (req, res) => {
          res.status(201).location(`/courses/api/${course.id}`).end();
      } catch (error) {
          if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeContraintError') {
-             
+            const errors = error.errors.map(err => err.mesage);
+            res.status(400).json({ errors });
+         } else {
+             throw error;
          }     
      }
 }));
