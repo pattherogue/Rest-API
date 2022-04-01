@@ -47,6 +47,10 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
 /* set Location header to URl new course */
 /* return 204 HTTP status code and no content */
 
+router.post('/courses', authenticateUser, asyncHandler(async (req, res) => {
+
+}));
+
 /* /api/courses/:id PUT route */
 /* update corresponding course */
 /* return 204 HTTP status code and no content */
