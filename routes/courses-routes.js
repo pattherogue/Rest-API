@@ -50,6 +50,7 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
 router.post('/courses', authenticateUser, asyncHandler(async (req, res) => {
      try {
          const course = await Course.create(req.body);
+         res.status(201).location(`/courses/api/${course.id}`).end();
      }
 }));
 
