@@ -68,7 +68,9 @@ router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
 /* return 204 HTTP status code and no content */
 
 router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
-
+    try {
+        
+    }
 }));
 
 /* /api/courses/:id DELETE route */
