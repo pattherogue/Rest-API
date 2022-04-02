@@ -46,7 +46,7 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
 
 
 
-router.post('/courses', authenticateUser, asyncHandler(async (req, res) => {
+router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
      try {
         /* create new course */
          const course = await Course.create(req.body);
@@ -66,6 +66,10 @@ router.post('/courses', authenticateUser, asyncHandler(async (req, res) => {
 /* /api/courses/:id PUT route */
 /* update corresponding course */
 /* return 204 HTTP status code and no content */
+
+router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
+
+}));
 
 /* /api/courses/:id DELETE route */
 /* delete corresponding course */
