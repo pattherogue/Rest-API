@@ -71,11 +71,11 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
     try {
         const course = await Course.findByPk(req.params.id);
         if (course) {
-
+            await course.update(req.body);
         } else {
-            
+
         }
-    } catch {
+    } catch (error) {
 
     }
 }));
