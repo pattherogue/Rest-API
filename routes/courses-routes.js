@@ -69,7 +69,7 @@ router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
 
 router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
     try {
-        
+        const course = await Course.findByPk(req.params.id);
     }
 }));
 
