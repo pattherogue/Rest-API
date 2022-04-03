@@ -80,6 +80,7 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
         if (
             error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError'
         ) {
+            const errors = error.errors.map((err) => err.message);
             
         }
     }
