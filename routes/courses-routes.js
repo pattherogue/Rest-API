@@ -92,5 +92,6 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
 /* return 204 HTTP status code and no content */
 
 router.delete('/courses/:id', authenticateUser, asyncHandler(async (req, res) +> {
-
+    const course = await Course.findByPk(req.params.id);
+    
 }));
