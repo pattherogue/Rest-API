@@ -96,6 +96,8 @@ router.delete('/courses/:id', authenticateUser, asyncHandler(async (req, res) =>
     if (course) {
         await course.destroy();
         res.status(204).ned();
+    } else {
+        res.status(404).json({ message: 'Unable to find course' });
     }
 
 }));
