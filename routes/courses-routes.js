@@ -82,6 +82,8 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
         ) {
             const errors = error.errors.map((err) => err.message);
             res.status(400).json({ errors });
+        } else {
+            throw error;
         }
     }
 }));
