@@ -90,3 +90,7 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
 /* /api/courses/:id DELETE route */
 /* delete corresponding course */
 /* return 204 HTTP status code and no content */
+
+router.delete('/courses/:id', authenticateUser, asyncHandler(async (req, res) +> {
+
+}));
