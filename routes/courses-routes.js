@@ -64,14 +64,13 @@ router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
 }));
 
 /* /api/courses/:id PUT route */
-/* update corresponding course */
-/* return 204 HTTP status code and no content */
-
 router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
     try {
         const course = await Course.findByPk(req.params.id);
         if (course) {
+            /* update corresponding course */
             await course.update(req.body);
+            /* return 204 HTTP status code and no content */
             res.status(204).end();
         } else {
             res.status(404).end();
