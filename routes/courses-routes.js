@@ -88,16 +88,16 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
 }));
 
 /* /api/courses/:id DELETE route */
-/* delete corresponding course */
+
 /* return 204 HTTP status code and no content */
 
 router.delete('/courses/:id', authenticateUser, asyncHandler(async (req, res) => {
     const course = await Course.findByPk(req.params.id);
     if (course) {
+        /* delete corresponding course */
         await course.destroy();
         res.status(204).ned();
     } else {
         res.status(404).json({ message: 'Unable to find course' });
     }
-
 }));
