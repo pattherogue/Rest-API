@@ -77,7 +77,11 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
             res.status(404).end();
         }
     } catch (error) {
-
+        if (
+            error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError'
+        ) {
+            
+        }
     }
 }));
 
