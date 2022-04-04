@@ -51,11 +51,11 @@ router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
         /* create new course */
          const course = await Course.create(req.body);
         /* set Location header to URl new course */
+        /* return 201 HTTP status code and no content */
          res.status(201).location(`/courses/api/${course.id}`).end();
      } catch (error) {
          if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeContraintError') {
             const errors = error.errors.map(err => err.mesage);
-            /* return 201 HTTP status code and no content */
             res.status(400).json({ errors });
          } else {
              throw error;
