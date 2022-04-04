@@ -51,6 +51,7 @@ router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
         /* return 201 HTTP status code and no content */
          res.status(201).location(`/courses/api/${course.id}`).end();
      } catch (error) {
+         // add validation
          if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeContraintError') {
             const errors = error.errors.map(err => err.mesage);
             res.status(400).json({ errors });
@@ -73,9 +74,8 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
             res.status(404).end();
         }
     } catch (error) {
-        if (
-            error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError'
-        ) {
+        // add validation
+        if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError') {
             const errors = error.errors.map((err) => err.message);
             res.status(400).json({ errors });
         } else {
