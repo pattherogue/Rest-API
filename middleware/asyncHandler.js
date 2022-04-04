@@ -3,7 +3,7 @@ exports.asyncHandler = (cb) => {
         try {
             await cb(req, res, next);
         } catch (error) {
-            next(error);
+            res.status(500).send(error);
         }
     };
 };
