@@ -43,9 +43,6 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
 }));
 
 /* /api/courses POST route */
-
-
-
 router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
      try {
         /* create new course */
