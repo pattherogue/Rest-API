@@ -69,6 +69,7 @@ module.exports = (sequelize, DataTypes) =>  {
             }
         },
 
+        // password security 
         confirmedPassword: {
             type: DataTypes.STRING,
             allowNull: false,
