@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 module.exports = (sequelize, DataTypes) =>  {
     class Users extends Model {
         static associations(models) {
-            
+      
         }
     }
     Users.init({

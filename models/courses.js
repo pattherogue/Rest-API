@@ -3,7 +3,11 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    class Courses extends Model {}
+    class Courses extends Model {
+        static associate(models) {
+            
+        }
+    }
     Courses.init({
         title: {
             type: DataTypes.STRING,
