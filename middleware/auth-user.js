@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 
 exports.authenticateUser = async (req, res, next) => {
      
+    let message;
     const credentials = auth(req);
 
     if (credentials) {
