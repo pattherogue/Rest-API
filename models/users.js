@@ -10,6 +10,12 @@ module.exports = (sequelize, DataTypes) =>  {
         }
     }
     Users.init({
+        id: {
+            type: DataTypes.Integer,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,
