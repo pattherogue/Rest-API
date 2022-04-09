@@ -96,3 +96,5 @@ router.delete('/courses/:id', authenticateUser, asyncHandler(async (req, res) =>
         res.status(404).json({ message: 'Unable to find course' });
     }
 }));
+
+module.exports = router;
