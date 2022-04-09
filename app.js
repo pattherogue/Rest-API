@@ -18,8 +18,8 @@ const app = express();
 // setup morgan which gives us http request logging
 app.use(morgan('dev'));
 
-app.use('/api', userRoutes);
-app.use('/api', courseRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/courses', courseRoutes);
 
 
 
