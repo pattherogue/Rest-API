@@ -7,7 +7,8 @@ const bcrypt = require('bcryptjs');
 
 exports.authenticateUser = async (req, res, next) => {
      
-    let message;
+    let message; //store message to display 
+    
     const credentials = auth(req);
 
     if (credentials) {
