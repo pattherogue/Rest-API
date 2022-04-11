@@ -21,6 +21,8 @@ app.use(morgan('dev'));
 app.use('/api/users', userRoutes);
 app.use('/api/courses', courseRoutes);
 
+app.use(express.json());
+
 
 // test database connection
 (async () => {
