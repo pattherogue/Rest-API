@@ -20,8 +20,8 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 
-app.use('/api', userRoutes);
-app.use('/api', courseRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/course', courseRoutes);
 
 
 
