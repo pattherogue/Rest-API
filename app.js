@@ -24,8 +24,6 @@ app.use('/api/user', userRoutes);
 app.use('/api/course', courseRoutes);
 
 
-
-
 // test database connection
 (async () => {
   try {
