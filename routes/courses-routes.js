@@ -8,7 +8,7 @@ const { User } = require('../models');
 const { Course } = require('../models');
 
 /* /api/courses GET route */
-router.get('/courses', asyncHandler (async (req, res) => {
+router.get('/', asyncHandler (async (req, res) => {
     const course = await Course.findAll({
         /* User associated with course */
         include: [{
@@ -25,7 +25,7 @@ router.get('/courses', asyncHandler (async (req, res) => {
 }));
 
 /* /api/courses/:id GET route */
-router.get('/courses/:id', asyncHandler( async (req, res) => {
+router.get('/:id', asyncHandler( async (req, res) => {
     /* return corresponding course */
     const course = await Course.findbyPk(req.params.id, {
         /* include user associated with course */
@@ -43,7 +43,7 @@ router.get('/courses/:id', asyncHandler( async (req, res) => {
 }));
 
 /* /api/courses POST route */
-router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
+router.post('/', authenticateUser, asyncHandler( async (req, res) => {
      try {
         /* create new course */
          const course = await Course.create(req.body);
@@ -62,7 +62,7 @@ router.post('/courses', authenticateUser, asyncHandler( async (req, res) => {
 }));
 
 /* /api/courses/:id PUT route */
-router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
+router.put('/:id', authenticateUser, asyncHandler( async(req, res) => {
     try {
         const course = await Course.findByPk(req.params.id);
         if (course) {
@@ -85,7 +85,7 @@ router.put('/courses/:id', authenticateUser, asyncHandler( async(req, res) => {
 }));
 
 /* /api/courses/:id DELETE route */
-router.delete('/courses/:id', authenticateUser, asyncHandler(async (req, res) => {
+router.delete('/:id', authenticateUser, asyncHandler(async (req, res) => {
     const course = await Course.findByPk(req.params.id);
     if (course) {
         /* delete corresponding course */

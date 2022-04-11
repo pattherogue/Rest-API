@@ -9,7 +9,7 @@ const { asyncHandler } = require('../middleware/asyncHandler');
 /* GET route */
 /* return all  propertires and values */
 // Route that returns the current authenticated user 
-router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
+router.get('/', authenticateUser, asyncHandler(async (req, res) => {
     // retrieve  current auth user information
     const user = req.currentUser;
     /* 200 HTTP status code */
@@ -23,7 +23,7 @@ router.get('/users', authenticateUser, asyncHandler(async (req, res) => {
 
 /* POST route */
 // Route that creates a new user 
-router.post('/users', asyncHandler(async (req, res) => {
+router.post('/', asyncHandler(async (req, res) => {
     try {
         /* create new user */
         await User.create(req.body);
