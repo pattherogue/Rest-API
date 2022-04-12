@@ -9,7 +9,7 @@ const { Courses } = require('../models');
 
 /* /api/courses GET route */
 router.get('/', asyncHandler (async (req, res) => {
-    const course = await Course.findAll({
+    const course = await Courses.findAll({
         /* User associated with course */
         include: [{
             model: Users,
@@ -49,7 +49,7 @@ router.post('/', authenticateUser, asyncHandler( async (req, res) => {
          const course = await Courses.create(req.body);
         /* set Location header to URl new course */
         /* return 201 HTTP status code and no content */
-         res.status(201).location(`/courses/api/${course.id}`).end();
+         res.status(201).location(`/api/courses/${course.id}`).end();
      } catch (error) {
          // add validation
          if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeContraintError') {
@@ -89,9 +89,9 @@ router.delete('/:id', authenticateUser, asyncHandler(async (req, res) => {
     const course = await Courses.findByPk(req.params.id);
     if (course) {
         /* delete corresponding course */
-        await course.destroy();
+        await Courses.destroy();
         /* return 204 HTTP status code and no content */
-        res.status(204).ned();
+        res.status(204).end();
     } else {
         res.status(404).json({ message: 'Unable to find course' });
     }
