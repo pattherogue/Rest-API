@@ -4,15 +4,15 @@ const express = require('express');
 const router = express.Router();
 const { authenticateUser } = require('../middleware/auth-user');
 const { asyncHandler } = require('../middleware/asyncHandler');
-const { User } = require('../models');
-const { Course } = require('../models');
+const { Users } = require('../models');
+const { Courses } = require('../models');
 
 /* /api/courses GET route */
 router.get('/', asyncHandler (async (req, res) => {
     const course = await Course.findAll({
         /* User associated with course */
         include: [{
-            model: User,
+            model: Users,
         }],
     });
     /* retunrn all courses */
@@ -27,10 +27,10 @@ router.get('/', asyncHandler (async (req, res) => {
 /* /api/courses/:id GET route */
 router.get('/:id', asyncHandler( async (req, res) => {
     /* return corresponding course */
-    const course = await Course.findbyPk(req.params.id, {
+    const course = await Courses.findbyPk(req.params.id, {
         /* include user associated with course */
         include: [{
-            model: User,
+            model: Users,
         }],
     });
     /* return 200 HTTP status code and no content */
@@ -46,7 +46,7 @@ router.get('/:id', asyncHandler( async (req, res) => {
 router.post('/', authenticateUser, asyncHandler( async (req, res) => {
      try {
         /* create new course */
-         const course = await Course.create(req.body);
+         const course = await Courses.create(req.body);
         /* set Location header to URl new course */
         /* return 201 HTTP status code and no content */
          res.status(201).location(`/courses/api/${course.id}`).end();
@@ -64,7 +64,7 @@ router.post('/', authenticateUser, asyncHandler( async (req, res) => {
 /* /api/courses/:id PUT route */
 router.put('/:id', authenticateUser, asyncHandler( async(req, res) => {
     try {
-        const course = await Course.findByPk(req.params.id);
+        const course = await Courses.findByPk(req.params.id);
         if (course) {
             /* update corresponding course */
             await course.update(req.body);
@@ -86,7 +86,7 @@ router.put('/:id', authenticateUser, asyncHandler( async(req, res) => {
 
 /* /api/courses/:id DELETE route */
 router.delete('/:id', authenticateUser, asyncHandler(async (req, res) => {
-    const course = await Course.findByPk(req.params.id);
+    const course = await Courses.findByPk(req.params.id);
     if (course) {
         /* delete corresponding course */
         await course.destroy();
