@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const { User } = require('../models');
+const { Users } = require('../models');
 const { authenticateUser } = require('../middleware/auth-user');
 const router = express.Router();
 const { asyncHandler } = require('../middleware/asyncHandler');
@@ -26,7 +26,7 @@ router.get('/', authenticateUser, asyncHandler(async (req, res) => {
 router.post('/', asyncHandler(async (req, res) => {
     try {
         /* create new user */
-        await User.create(req.body);
+        await Users.create(req.body);
         /* location header to "/" */
         /* return 201 http status code */
          /* no content */

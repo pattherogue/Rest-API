@@ -20,8 +20,8 @@ app.use(morgan('dev'));
 
 app.use(express.json());
 
-app.use('/api/users', userRoutes);
-app.use('/api/courses', courseRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/course', courseRoutes);
 
 
 // test database connection
