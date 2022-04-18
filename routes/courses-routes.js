@@ -27,7 +27,7 @@ router.get('/', asyncHandler (async (req, res) => {
 /* /api/courses/:id GET route */
 router.get('/:id', asyncHandler(async (req, res) => {
     /* return corresponding course */
-    const course = await Courses.findbyPk(req.params.id, {
+    const course = await Courses.findByPk(req.params.id, {
         /* include user associated with course */
         include: [{
             model: Users,
