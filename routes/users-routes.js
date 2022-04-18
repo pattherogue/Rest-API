@@ -26,7 +26,7 @@ router.get('/', authenticateUser, asyncHandler(async (req, res) => {
 router.post('/', asyncHandler(async (req, res) => {
     try {
         /* create new user */
-        const user = await Users.create(req.body);
+        await Users.create(req.body);
         /* location header to "/" */
         /* return 201 http status code */
          /* no content */
