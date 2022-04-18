@@ -53,7 +53,7 @@ router.post('/', authenticateUser, asyncHandler( async (req, res) => {
      } catch (error) {
          // add validation
          if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeContraintError') {
-            const errors = error.errors.map(err => err.mesage);
+            const errors = error.errors.map(err => err.message);
             res.status(400).json({ errors });
          } else {
              throw error;
