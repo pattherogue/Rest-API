@@ -89,7 +89,7 @@ router.delete('/:id', authenticateUser, asyncHandler(async (req, res) => {
     const course = await Courses.findByPk(req.params.id);
     if (course) {
         /* delete corresponding course */
-        await Courses.destroy();
+        await course.destroy();
         /* return 204 HTTP status code and no content */
         res.status(204).end();
     } else {
